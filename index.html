@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meridian Studio Group Ltd — Mobile & Web App Developers</title>
+<meta name="description" content="Meridian Studio Group Ltd designs and builds beautiful, high-performance iOS, Android and web apps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0d12;--bg2:#11141b;--fg:#f3f1ec;--mut:#9aa0ac;--line:#222733;--acc:#e8b04b;--acc2:#4b8be8;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.1;letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,6.5vw,5rem)}
+h2{font-size:clamp(2rem,4vw,3rem)}
+.eyebrow{color:var(--acc);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:600;font-size:.95rem;transition:.2s;border:1px solid transparent}
+.btn.p{background:var(--acc);color:#14110a}.btn.p:hover{transform:translateY(-2px);background:#f2c067}
+.btn.g{border-color:var(--line);color:var(--fg)}.btn.g:hover{border-color:var(--fg)}
+header{position:fixed;inset:0 0 auto;z-index:10;backdrop-filter:blur(14px);background:rgba(11,13,18,.7);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:Fraunces,serif;font-size:1.25rem;font-weight:600;display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:22px;border-radius:50%;border:2px solid var(--acc);position:relative}
+.logo i::after{content:"";position:absolute;left:50%;top:-5px;bottom:-5px;width:2px;background:var(--acc);transform:translateX(-50%) rotate(20deg)}
+nav ul{display:flex;gap:30px;list-style:none;font-size:.92rem;color:var(--mut)}
+nav ul a:hover{color:var(--fg)}
+.hero{padding:150px 0 90px;background:radial-gradient(900px 500px at 80% 0,rgba(75,139,232,.18),transparent 60%),radial-gradient(700px 400px at 0 20%,rgba(232,176,75,.12),transparent 60%)}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero p.lead{color:var(--mut);font-size:1.15rem;max-width:520px;margin:24px 0 34px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line);box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:70px;border-top:1px solid var(--line);padding-top:34px}
+.stats b{font-family:Fraunces,serif;font-size:2.2rem;display:block}
+.stats span{color:var(--mut);font-size:.9rem}
+section{padding:100px 0}
+.head{max-width:620px;margin-bottom:54px}
+.head p{color:var(--mut);margin-top:16px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:#3a4152}
+.card .ic{width:44px;height:44px;border-radius:12px;background:rgba(232,176,75,.12);color:var(--acc);display:grid;place-items:center;font-size:1.3rem;margin-bottom:20px}
+.card h3{font-size:1.35rem;margin-bottom:10px}
+.card p{color:var(--mut);font-size:.95rem}
+.work{background:var(--bg2);border-block:1px solid var(--line)}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.w{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line)}
+.w img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.w:hover img{transform:scale(1.06)}
+.w div{position:absolute;inset:auto 0 0;padding:70px 24px 22px;background:linear-gradient(transparent,rgba(5,6,9,.92))}
+.w small{color:var(--acc);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+.w h3{font-size:1.4rem;margin-top:4px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about img{border-radius:var(--r);border:1px solid var(--line);aspect-ratio:4/3;object-fit:cover;width:100%}
+.about p{color:var(--mut);margin-top:18px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:70px}
+.steps div{border-top:2px solid var(--acc);padding-top:18px}
+.steps b{font-family:Fraunces,serif;color:var(--acc);font-size:1.1rem}
+.steps h3{font-size:1.2rem;margin:6px 0}
+.steps p{color:var(--mut);font-size:.9rem;margin:0}
+.contact{text-align:center;background:radial-gradient(700px 350px at 50% 100%,rgba(232,176,75,.15),transparent 70%)}
+.contact p{color:var(--mut);margin:18px auto 34px;max-width:480px}
+form{display:grid;gap:12px;max-width:520px;margin:0 auto;text-align:left}
+input,textarea{width:100%;padding:14px 16px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;color:var(--fg);font:inherit}
+input:focus,textarea:focus{outline:none;border-color:var(--acc)}
+form .btn{cursor:pointer;font-family:inherit}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:860px){
+ nav ul{display:none}
+ .hero{padding-top:120px}
+ .hero .grid,.about{grid-template-columns:1fr;gap:36px}
+ .hero-img{aspect-ratio:4/3}
+ .cards,.wgrid{grid-template-columns:1fr}
+ .w{aspect-ratio:4/3}
+ .stats,.steps{grid-template-columns:1fr 1fr}
+ section{padding:70px 0}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+ <a href="#" class="logo"><i></i>Meridian Studio</a>
+ <ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#process">Process</a></li></ul>
+ <a href="#contact" class="btn p" style="padding:10px 20px">Start a project</a>
+</nav></div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+ <div class="grid">
+  <div>
+   <p class="eyebrow">App developers · London</p>
+   <h1>Apps built to find their true north.</h1>
+   <p class="lead">Meridian Studio Group Ltd designs, builds and launches polished iOS, Android and web apps for startups and ambitious brands.</p>
+   <div class="cta"><a href="#contact" class="btn p">Start a project</a><a href="#work" class="btn g">See our work</a></div>
+  </div>
+  <div class="hero-img"><img src="images/img1.jpg" alt="Hand holding a smartphone showing a dashboard app" fetchpriority="high"></div>
+ </div>
+ <div class="stats">
+  <div><b>60+</b><span>Apps shipped</span></div>
+  <div><b>4.9★</b><span>Average store rating</span></div>
+  <div><b>12</b><span>Countries served</span></div>
+  <div><b>8 wks</b><span>Typical MVP launch</span></div>
+ </div>
+</div></div>
+
+<section id="services"><div class="wrap">
+ <div class="head"><p class="eyebrow">What we do</p><h2>Everything from first sketch to App Store.</h2><p>One senior team across product, design and engineering — no hand-offs, no surprises.</p></div>
+ <div class="cards">
+  <div class="card"><div class="ic">▢</div><h3>Mobile apps</h3><p>Native and cross-platform iOS and Android apps with smooth, accessible interfaces.</p></div>
+  <div class="card"><div class="ic">◐</div><h3>Web apps</h3><p>Fast, secure progressive web apps and SaaS platforms that scale with your users.</p></div>
+  <div class="card"><div class="ic">✎</div><h3>Product design</h3><p>Research, prototyping and UI systems that turn ideas into products people love.</p></div>
+  <div class="card"><div class="ic">⚙</div><h3>APIs &amp; backend</h3><p>Reliable cloud infrastructure, integrations and data pipelines behind every app.</p></div>
+  <div class="card"><div class="ic">▲</div><h3>Analytics &amp; growth</h3><p>Dashboards and experiments that show what's working and drive retention.</p></div>
+  <div class="card"><div class="ic">✓</div><h3>Support &amp; maintenance</h3><p>Ongoing updates, monitoring and QA so your app stays fast and secure.</p></div>
+ </div>
+</div></section>
+
+<section id="work" class="work"><div class="wrap">
+ <div class="head"><p class="eyebrow">Selected work</p><h2>Products we're proud of.</h2></div>
+ <div class="wgrid">
+  <a class="w" href="#contact"><img loading="lazy" src="images/img5.jpg" alt="Analytics dashboard on a laptop"><div><small>Web · SaaS</small><h3>Insight Analytics</h3></div></a>
+  <a class="w" href="#contact"><img loading="lazy" src="images/img2.jpg" alt="Smartphone home screen with apps"><div><small>Mobile · iOS</small><h3>Orbit Super App</h3></div></a>
+  <a class="w" href="#contact"><img loading="lazy" src="images/img6.jpg" alt="Customer paying with a phone in a shop"><div><small>Mobile · Retail</small><h3>TapPay Checkout</h3></div></a>
+ </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+ <div class="about">
+  <img loading="lazy" src="images/img3.jpg" alt="Developers collaborating around a table with laptops">
+  <div>
+   <p class="eyebrow">About us</p>
+   <h2>A small senior team with a big track record.</h2>
+   <p>Meridian Studio Group Ltd is an independent app development studio. We partner closely with founders and product teams, bringing the craft of a design studio and the rigour of an engineering team.</p>
+   <p>Every project gets a dedicated lead, transparent weekly demos and code you fully own.</p>
+  </div>
+ </div>
+ <div class="steps" id="process">
+  <div><b>01</b><h3>Discover</h3><p>Goals, users and scope defined together.</p></div>
+  <div><b>02</b><h3>Design</h3><p>Clickable prototypes tested early.</p></div>
+  <div><b>03</b><h3>Build</h3><p>Weekly releases and visible progress.</p></div>
+  <div><b>04</b><h3>Launch</h3><p>Store submission, monitoring and growth.</p></div>
+ </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+ <p class="eyebrow">Let's talk</p>
+ <h2>Have an app idea?</h2>
+ <p>Tell us what you're building and we'll reply within one working day.</p>
+ <form action="mailto:hello@meridianstudio.example" method="post" enctype="text/plain">
+  <input name="name" placeholder="Your name" required aria-label="Your name">
+  <input name="email" type="email" placeholder="Email address" required aria-label="Email address">
+  <textarea name="message" rows="4" placeholder="Tell us about your project" required aria-label="Project details"></textarea>
+  <button class="btn p" type="submit">Send message</button>
+ </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+ <span>© <script>document.write(new Date().getFullYear())</script> Meridian Studio Group Ltd. All rights reserved.</span>
+ <span>Photos via <a href="https://unsplash.com" target="_blank" rel="noopener" style="text-decoration:underline">Unsplash</a></span>
+</div></footer>
+</body>
+</html>
